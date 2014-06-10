@@ -5,7 +5,7 @@ var prefix = require('gulp-autoprefixer');
 
 
 gulp.task('css', function() {
-  return gulp.src('/public/source/css/*.css')
+  return gulp.src('/public/source/*.css')
  .pipe(prefix("last 5 version"))
  .pipe(minify())
  .pipe(concat('all.css'))
