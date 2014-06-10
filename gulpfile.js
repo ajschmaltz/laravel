@@ -3,7 +3,7 @@ var minify = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var prefix = require('gulp-autoprefixer');
-var htmlmin = require('gulp-htmlmin')
+var htmlmin = require('gulp-htmlmin');
 
 var customCss = ['css'];
 var customJs = ['js'];
