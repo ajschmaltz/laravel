@@ -1,8 +1,9 @@
 var gulp = require('gulp');
 var minify = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var prefix = require('gulp-autoprefixer');
-var smhtml = require('gulp-htmlmin')
+var htmlmin = require('gulp-htmlmin')
 
 
 gulp.task('css', function() {
@@ -15,11 +16,13 @@ gulp.task('css', function() {
 
 gulp.task('html', function(){
   return gulp.src('source/views/**')
+  .piple(gulp.htmlmin({collapseWhitespace: true,removeComments: true,removeAttributeQuotes: true}))
   .pipe(gulp.dest('app/views'));
 });
 
 gulp.task('js', function(){
   return gulp.src('source/js/**')
+  .pipe(uglify())
   .pipe(concat('all.js'))
   .pipe(gulp.dest('public/js'));
 });
