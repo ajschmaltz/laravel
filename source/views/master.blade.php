@@ -13,6 +13,7 @@
   </head>
   <body>
     @yield('body')
+    
     <script src="/js/all.js"></script>
   </body>
 </html>
