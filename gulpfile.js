@@ -30,11 +30,11 @@ gulp.task('js', function(){
 });
 
 gulp.task('css-bootstrap', function(){
-  return gulp.src('bowser_components/bootstrap/dist/css/bootstrap.css')
+  return gulp.src('bower_components/bootstrap/dist/css/bootstrap.css')
   .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('default', function() {
   gulp.watch('source/**', custom);
-  gulp.watch('bowser_components/**', projects);
+  gulp.watch('bower_components/**', projects);
 });
