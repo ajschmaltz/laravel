@@ -5,8 +5,11 @@ var concat = require('gulp-concat');
 var prefix = require('gulp-autoprefixer');
 var htmlmin = require('gulp-htmlmin')
 
-var custom = ['css', 'js', 'html'];
-var projects = ['css-bootstrap'];
+var customCss = ['css'];
+var customJs = ['js'];
+var customHtml = ['html'];
+var bootstrapCss = ['bootstrap-css'];
+
 
 gulp.task('css', function() {
   return gulp.src('source/css/*.css')
@@ -29,12 +32,14 @@ gulp.task('js', function(){
   .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('css-bootstrap', function(){
+gulp.task('bootstrap-css', function(){
   return gulp.src('bower_components/bootstrap/dist/css/bootstrap.css')
   .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('default', function() {
-  gulp.watch('source/**', custom);
-  gulp.watch('bower_components/**', projects);
+  gulp.watch('source/js/*.js', customJs);
+  gulp.watch('source/css/*.css', customCss);
+  gulp.watch('source/views/*.blade.php', customHtml);
+  gulp.watch('bower_components/bootstrap/dist/css/bootstrap.css', projects);
 });
