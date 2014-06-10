@@ -13,5 +13,5 @@ gulp.task('default', function() {
 });
 
 gulp.task('watch', function() {
-  return gulp.watch('public/source/*.css', ['default']);
+  gulp.watch('public/source/*.css', ['default']);
 });
