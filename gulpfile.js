@@ -9,7 +9,7 @@ gulp.task('default', function() {
  .pipe(prefix("last 5 version"))
  .pipe(minify())
  .pipe(concat('all.css'))
- .pipe(gulp.dest('/public/css'));
+ .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('watch', function() {
