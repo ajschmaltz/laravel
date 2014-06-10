@@ -20,6 +20,7 @@ gulp.task('html', function(){
 
 gulp.task('js', function(){
   return gulp.src('source/js/**')
+  .pipe(concat('all.js'))
   .pipe(gulp.dest('public/js'));
 });
 
