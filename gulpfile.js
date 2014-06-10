@@ -10,7 +10,7 @@ var filter = require('gulp-filter');
 var customCss = ['css'];
 var customJs = ['js'];
 var customHtml = ['html'];
-var bootstrapCss = ['bootstrap-css'];
+var bowerFiles = ['bower-files-js', 'bower-files-css'];
 
 
 gulp.task('css', function() {
@@ -34,13 +34,27 @@ gulp.task('js', function(){
   .pipe(gulp.dest('public/js'));
 });
 
-gulp.task("bower-files", function(){
-    gulpBowerFiles().pipe(gulp.dest('public'));
+gulp.task("bower-files-js", function(){
+  return gulpBowerFiles()
+  .pipe(gulpFilter('**/*.js'))
+  .pipe(uglify())
+  .pipe(concat('bower.js'))
+  .pipe(gulp.dest('public'));
+});
+
+gulp.task("bower-files-css", function(){
+  return gulpBowerFiles()
+  .pipe(gulpFilter('**/*.css'))
+  .pipe(prefix("last 5 version"))
+  .pipe(minify())
+  .pipe(concat('bower.js'))
+  .pipe(gulp.dest('public'));
 });
 
 gulp.task('default', function() {
+  
   gulp.watch('source/js/*.js', customJs);
   gulp.watch('source/css/*.css', customCss);
   gulp.watch('source/views/*.blade.php', customHtml);
-  gulp.watch('bower_components/bootstrap/dist/css/bootstrap.css', projects);
+  gulp.watch('bower_components/**', bowerFiles);
 });
