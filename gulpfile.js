@@ -4,6 +4,8 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var prefix = require('gulp-autoprefixer');
 var htmlmin = require('gulp-htmlmin');
+var gulpBowerFiles = require('gulp-bower-files');
+var filter = require('gulp-filter');
 
 var customCss = ['css'];
 var customJs = ['js'];
@@ -32,9 +34,8 @@ gulp.task('js', function(){
   .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('bootstrap-css', function(){
-  return gulp.src('bower_components/bootstrap/dist/css/bootstrap.css')
-  .pipe(gulp.dest('public/css'));
+gulp.task("bower-files", function(){
+    gulpBowerFiles().pipe(gulp.dest('public'));
 });
 
 gulp.task('default', function() {
