@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'youzag',
 			'username'  => 'forge',
-			'password'  => 'h3sfgTWh4BPWWIWdP3er',
+			'password'  => 'XNJAd3patyfy6cQHIAXL',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
