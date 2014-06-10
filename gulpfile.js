@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 
 gulp.task('css', function() {
   return gulp.src('/public/source/css/*.css')
+ .pipe(prefix("last 5 version"))
  .pipe(uglify())
  .pipe(concat('all.css'))
  .pipe(gulp.dest('/public/css'));
