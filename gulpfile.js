@@ -39,7 +39,7 @@ gulp.task("bower-files-js", function(){
   .pipe(gulpFilter('**/*.js'))
   .pipe(uglify())
   .pipe(concat('bower.js'))
-  .pipe(gulp.dest('public'));
+  .pipe(gulp.dest('public/js'));
 });
 
 gulp.task("bower-files-css", function(){
@@ -48,7 +48,7 @@ gulp.task("bower-files-css", function(){
   .pipe(prefix("last 5 version"))
   .pipe(minify())
   .pipe(concat('bower.js'))
-  .pipe(gulp.dest('public'));
+  .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('default', function() {
