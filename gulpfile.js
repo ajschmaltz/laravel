@@ -16,7 +16,7 @@ gulp.task('css', function() {
 
 gulp.task('html', function(){
   return gulp.src('source/views/**')
-  .piple(gulp.htmlmin({collapseWhitespace: true,removeComments: true,removeAttributeQuotes: true}))
+  .piple(htmlmin({collapseWhitespace: true,removeComments: true,removeAttributeQuotes: true}))
   .pipe(gulp.dest('app/views'));
 });
 
