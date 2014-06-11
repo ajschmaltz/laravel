@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <link href="/css/bower.css" rel="stylesheet">
     <link href="/css/all.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -14,7 +13,6 @@
   </head>
   <body>
     @yield('body')
-    <script src="/js/bower.js"></script>
     <script src="/js/all.js"></script>
   </body>
 </html>
