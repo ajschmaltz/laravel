@@ -8,7 +8,7 @@
 	},
 	"require-dev": {
     		"way/generators": "2.*"
-	}
+	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
