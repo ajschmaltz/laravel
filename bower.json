@@ -4,7 +4,8 @@
   "dependencies": {
     "bootstrap": "latest",
     "jquery": "latest",
-    "angular": "latest"
+    "angular": "latest",
+    "fontawesome": "latest"
   },
   "private": true
 }
