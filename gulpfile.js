@@ -34,7 +34,7 @@ gulp.task('js', function(){
   .pipe(gulp.dest('public/js'));
 });
 
-gulp.task("bower-files-js", function(){
+gulp.task('bower-files-js', function(){
   return gulpBowerFiles()
   .pipe(gulpFilter('**/*.js'))
   .pipe(uglify())
@@ -42,7 +42,7 @@ gulp.task("bower-files-js", function(){
   .pipe(gulp.dest('public/js'));
 });
 
-gulp.task("bower-files-css", function(){
+gulp.task('bower-files-css', function(){
   return gulpBowerFiles()
   .pipe(gulpFilter('**/*.css'))
   .pipe(prefix("last 5 version"))
@@ -52,7 +52,8 @@ gulp.task("bower-files-css", function(){
 });
 
 gulp.task('default', function() {
-  
+  gulp.run('bower-files-css');
+  gulp.run('bower-files-js');
   gulp.watch('source/js/*.js', customJs);
   gulp.watch('source/css/*.css', customCss);
   gulp.watch('source/views/*.blade.php', customHtml);
