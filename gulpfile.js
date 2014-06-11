@@ -37,18 +37,15 @@ gulp.task('js', function(){
 gulp.task('bower-files-js', function(){
   return gulpBowerFiles()
   .pipe(gulpFilter('**/*.js'))
-  .pipe(uglify())
   .pipe(concat('bower.js'))
-  .pipe(gulp.dest('public/js'));
+  .pipe(gulp.dest('source/js'));
 });
 
 gulp.task('bower-files-css', function(){
   return gulpBowerFiles()
   .pipe(gulpFilter('**/*.css'))
-  .pipe(prefix("last 5 version"))
-  .pipe(minify())
-  .pipe(concat('bower.js'))
-  .pipe(gulp.dest('public/css'));
+  .pipe(concat('bower.css'))
+  .pipe(gulp.dest('source/css'));
 });
 
 gulp.task('default', function() {
