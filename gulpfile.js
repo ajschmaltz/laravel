@@ -1,16 +1,17 @@
-var gulp = require('gulp');
-var minify = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var prefix = require('gulp-autoprefixer');
-var htmlmin = require('gulp-htmlmin');
-var gulpBowerFiles = require('gulp-bower-files');
-var filter = require('gulp-filter');
+var gulp            = require('gulp');
+var minify          = require('gulp-minify-css');
+var uglify          = require('gulp-uglify');
+var concat          = require('gulp-concat');
+var prefix          = require('gulp-autoprefixer');
+var htmlmin         = require('gulp-htmlmin');
+var gulpBowerFiles  = require('gulp-bower-files');
+var filter          = require('gulp-filter');
 
-var customCss = ['css'];
-var customJs = ['js'];
-var customHtml = ['html'];
-var bowerFiles = ['bower-files-js', 'bower-files-css'];
+var customCss       = ['css'];
+var customJs        = ['js'];
+var customHtml      = ['html'];
+var bowerFiles      = ['bower-files-js', 'bower-files-css'];
+var startup         = ['css', 'js', 'html', 'bower-files-js', 'bower-files-css'];
 
 
 gulp.task('css', function() {
@@ -48,7 +49,7 @@ gulp.task('bower-files-css', function(){
   .pipe(gulp.dest('source/css'));
 });
 
-gulp.task('default', function() {
+gulp.task('default', startup, function() {
   gulp.watch('source/js/*.js', customJs);
   gulp.watch('source/css/*.css', customCss);
   gulp.watch('source/views/*.blade.php', customHtml);
