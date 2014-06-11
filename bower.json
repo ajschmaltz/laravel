@@ -2,8 +2,7 @@
   "name": "youzag",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "latest",
-    "jquery": "latest"
+
   },
   "private": true
 }
