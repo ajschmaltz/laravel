@@ -11,7 +11,7 @@ var customCss       = ['css'];
 var customJs        = ['js'];
 var customHtml      = ['html'];
 var bowerFiles      = ['bower-files-js', 'bower-files-css'];
-var startup         = ['css', 'js', 'html'];
+var startup         = ['css', 'js', 'html','bower-files-js', 'bower-files-css'];
 
 
 gulp.task('css', function() {
@@ -53,5 +53,5 @@ gulp.task('default', startup, function() {
   gulp.watch('source/js/*.js', customJs);
   gulp.watch('source/css/*.css', customCss);
   gulp.watch('source/views/*.blade.php', customHtml);
-//  gulp.watch('bower_components/**', bowerFiles);
+  gulp.watch('bower_components/**', bowerFiles);
 });
