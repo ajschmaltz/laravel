@@ -5,7 +5,7 @@ var concat          = require('gulp-concat');
 var prefix          = require('gulp-autoprefixer');
 var htmlmin         = require('gulp-htmlmin');
 var gulpBowerFiles  = require('gulp-bower-files');
-var filter          = require('gulp-filter');
+var gulpFilter      = require('gulp-filter');
 
 var customCss       = ['css'];
 var customJs        = ['js'];
